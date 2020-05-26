@@ -5,7 +5,7 @@
  =========================================================
 
  * Copyright 2019 ImmanuelQRW (http://www.immanuelqrw.com)
- * Licensed under MIT (https://github.com/immanuelqrw/kernel/blob/master/LICENSE.md)
+ * Licensed under MIT (https://github.com/immanuelqrw/anubis/blob/master/LICENSE.md)
 
  =========================================================
 
