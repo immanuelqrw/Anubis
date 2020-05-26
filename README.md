@@ -1,2 +1,2 @@
-# Kernel-Template
-Core Library Template
+# Anubis
+Bingo Board Goal Creator / Viewer
