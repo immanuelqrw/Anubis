@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
+import {BingoTaskViewer} from "layouts/BingoTaskViewer";
 
 // core components
 
@@ -12,8 +13,8 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      {/*<Route path="/v1" component={V1} />*/}
-      <Redirect from="/" to="/admin/dashboard" />
+      <Route path="/" component={BingoTaskViewer} />
+      {/*<Redirect from="/" to="/admin/dashboard" />*/}
     </Switch>
   </Router>,
   document.getElementById("root")
