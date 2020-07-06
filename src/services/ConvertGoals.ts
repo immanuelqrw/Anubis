@@ -1,9 +1,9 @@
 import * as fs from "fs";
 import * as glob from "glob";
 import * as path from "path";
-import {BingoBoard} from "./BingoBoard";
-import {GoalConverterService} from "./GoalConverterService";
-import {Bingo} from "./Bingo";
+import {BingoBoard} from "@services/BingoBoard";
+import {GoalConverterService} from "@services/GoalConverterService";
+import {Bingo} from "@services/Bingo";
 
 export function convertGoals(directoryPath: string) {
   const filenames: string[] = glob.sync(`${directoryPath}/*.yml`);

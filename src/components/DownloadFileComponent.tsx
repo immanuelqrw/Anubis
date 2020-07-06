@@ -2,8 +2,8 @@ import {BaseSyntheticEvent, ChangeEvent, Component} from "react";
 import {CSSProperties} from "@material-ui/core/styles/withStyles";
 import {Button, Grid} from "@material-ui/core";
 import React from "react";
-import {GoalConverterService} from "../services/GoalConverterService";
-import {BingoBoard} from "../services/BingoBoard";
+import {GoalConverterService} from "@services/GoalConverterService";
+import {BingoBoard} from "@services/BingoBoard";
 
 const inputDownloadFile: CSSProperties = {
   display: 'none',

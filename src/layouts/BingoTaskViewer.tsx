@@ -2,9 +2,9 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css';
 // @ts-ignore
 import React, {Component} from "react";
 
-import {UploadFileComponent} from "components/UploadFileComponent"
-import {DownloadFileComponent} from "../components/DownloadFileComponent";
-import DraggableBingoTable from "../components/DraggableBingoTable";
+import {UploadFileComponent} from "@components/UploadFileComponent"
+import {DownloadFileComponent} from "@components/DownloadFileComponent";
+import DraggableBingoTable from "@components/DraggableBingoTable";
 
 interface Props {
   classes: any;

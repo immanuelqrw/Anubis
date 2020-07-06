@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core';
 import {DragDropContext, Droppable, Draggable, NotDraggingStyle} from "react-beautiful-dnd";
-import CheckboxAutocomplete from "./CheckboxAutocomplete";
-import AddAutocomplete from "./AddAutocomplete";
+import CheckboxAutocomplete from "@components/CheckboxAutocomplete";
+import AddAutocomplete from "@components/AddAutocomplete";
 
 interface Item {
   id: string | number | undefined;
