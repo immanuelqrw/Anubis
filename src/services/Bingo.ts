@@ -1,5 +1,5 @@
 export interface Bingo {
-  board: string;
-  rules: string;
-  tips: string;
+  board: string
+  rules: string
+  tips: string
 }

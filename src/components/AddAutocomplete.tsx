@@ -1,12 +1,12 @@
 /* eslint-disable no-use-before-define */
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
+import React from 'react'
+import TextField from '@material-ui/core/TextField'
+import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete'
 
-const filter = createFilterOptions<FilmOptionType>();
+const filter = createFilterOptions<FilmOptionType>()
 
 export default function AddAutocomplete() {
-  const [value, setValue] = React.useState<FilmOptionType | null>(null);
+  const [value, setValue] = React.useState<FilmOptionType | null>(null)
 
   return (
     <Autocomplete
@@ -15,60 +15,60 @@ export default function AddAutocomplete() {
         if (typeof newValue === 'string') {
           setValue({
             title: newValue,
-          });
+          })
         } else if (newValue && newValue.inputValue) {
           // Create a new value from the user input
           setValue({
             title: newValue.inputValue,
-          });
+          })
         } else {
-          setValue(newValue);
+          setValue(newValue)
         }
       }}
       filterOptions={(options, params) => {
-        const filtered = filter(options, params);
+        const filtered = filter(options, params)
 
         // Suggest the creation of a new value
         if (params.inputValue !== '') {
           filtered.push({
             inputValue: params.inputValue,
             title: `Add "${params.inputValue}"`,
-          });
+          })
         }
 
-        return filtered;
+        return filtered
       }}
-      selectOnFocus
-      clearOnBlur
-      handleHomeEndKeys
+      selectOnFocus={true}
+      clearOnBlur={true}
+      handleHomeEndKeys={true}
       id="free-solo-with-text-demo"
       options={top100Films}
       getOptionLabel={(option) => {
         // Value selected with enter, right from the input
         if (typeof option === 'string') {
-          return option;
+          return option
         }
         // Add "xxx" option created dynamically
         if (option.inputValue) {
-          return option.inputValue;
+          return option.inputValue
         }
         // Regular option
-        return option.title;
+        return option.title
       }}
       renderOption={(option) => option.title}
       style={{ width: 300 }}
-      freeSolo
+      freeSolo={true}
       renderInput={(params) => (
         <TextField {...params} label="Free solo with text demo" variant="outlined" />
       )}
     />
-  );
+  )
 }
 
 interface FilmOptionType {
-  inputValue?: string;
-  title: string;
-  year?: number;
+  inputValue?: string
+  title: string
+  year?: number
 }
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
@@ -176,4 +176,4 @@ const top100Films: FilmOptionType[] = [
   { title: 'Snatch', year: 2000 },
   { title: '3 Idiots', year: 2009 },
   { title: 'Monty Python and the Holy Grail', year: 1975 },
-];
+]

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core';
-import {DragDropContext, Droppable, Draggable, NotDraggingStyle} from "react-beautiful-dnd";
-import CheckboxAutocomplete from "@components/CheckboxAutocomplete";
-import AddAutocomplete from "@components/AddAutocomplete";
+import React, { Component } from "react"
+import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core'
+import {DragDropContext, Droppable, Draggable, NotDraggingStyle} from "react-beautiful-dnd"
+import CheckboxAutocomplete from "@components/CheckboxAutocomplete"
+import AddAutocomplete from "@components/AddAutocomplete"
 
 interface Item {
-  id: string | number | undefined;
-  primary: React.ReactNode;
-  secondary: React.ReactNode;
+  id: string | number | undefined
+  primary: React.ReactNode
+  secondary: React.ReactNode
 }
 
 // component own props
@@ -18,7 +18,7 @@ interface DraggableBingoTableProps extends DraggableBingoTableOwnProps { }
 
 // component State
 interface DraggableBingoTableStateProps {
-  items: Item[];
+  items: Item[]
 }
 
 // fake data generator
@@ -48,7 +48,7 @@ function getItemStyle(isDragging: boolean, draggableStyle: NotDraggingStyle | un
     ...(isDragging && {
       background: "rgb(235,235,235)"
     })
-  };
+  }
 }
 
 export default class DraggableBingoTable extends Component<DraggableBingoTableProps, DraggableBingoTableStateProps> {
@@ -130,7 +130,7 @@ function DraggableComponent(id: string, index: number) {
         )}
       </Draggable>
     )
-  };
+  }
 }
 
 // @ts-ignore
@@ -151,5 +151,5 @@ function DroppableComponent(onDragEnd) {
         </Droppable>
       </DragDropContext>
     )
-  };
+  }
 }

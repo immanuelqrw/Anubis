@@ -1,18 +1,18 @@
 // import .....
 
-import {Component} from "react";
-import React from "react";
-import {CSSProperties} from "@material-ui/core/styles/withStyles";
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import {Component} from "react"
+import React from "react"
+import {CSSProperties} from "@material-ui/core/styles/withStyles"
+import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core"
 
 const bingoTable: CSSProperties = {
   table: {
     minWidth: 650,
   },
-};
+}
 
 function createData(name: string, types: string[], difficulty: number) {
-  return { name, types, difficulty };
+  return { name, types, difficulty }
 }
 
 const rows = [
@@ -21,7 +21,7 @@ const rows = [
   createData('Eclair', ["262"], 16.0),
   createData('Cupcake', ["305"], 3.7),
   createData('Gingerbread', ["356"], 16.0),
-];
+]
 
 // component own props
 interface BingoProps { }
@@ -59,6 +59,6 @@ export class BingoTable extends Component<BingoTableProps, BingoTableStateProps>
           </TableBody>
         </Table>
       </TableContainer>
-    );
+    )
   }
 }

@@ -1,24 +1,24 @@
-import 'perfect-scrollbar/css/perfect-scrollbar.css';
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
 // @ts-ignore
-import React, {Component} from "react";
+import React, {Component} from "react"
 
 import {UploadFileComponent} from "@components/UploadFileComponent"
-import {DownloadFileComponent} from "@components/DownloadFileComponent";
-import DraggableBingoTable from "@components/DraggableBingoTable";
+import {DownloadFileComponent} from "@components/DownloadFileComponent"
+import DraggableBingoTable from "@components/DraggableBingoTable"
 
 interface Props {
-  classes: any;
-  location: any;
+  classes: any
+  location: any
 }
 
 interface State {
 }
 
 export class BingoTaskViewer extends Component<Props, State> {
-  refs: any;
+  refs: any
 
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, ...rest } = this.props
     return (
       <>
         <div>
@@ -27,6 +27,6 @@ export class BingoTaskViewer extends Component<Props, State> {
         </div>
         <DraggableBingoTable/>
       </>
-    );
+    )
   }
 }

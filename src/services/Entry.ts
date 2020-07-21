@@ -1,5 +1,5 @@
 export interface Entry {
-  difficulty: number;
-  name: string;
-  types: Array<string>;
+  difficulty: number
+  name: string
+  types: string[]
 }

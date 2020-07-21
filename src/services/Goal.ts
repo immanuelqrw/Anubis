@@ -1,4 +1,4 @@
 export interface Goal {
-  name: string;
-  types: Array<string>;
+  name: string
+  types: string[]
 }

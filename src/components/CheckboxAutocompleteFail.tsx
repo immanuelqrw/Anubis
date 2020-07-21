@@ -1,27 +1,27 @@
-import React from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import React from 'react'
+import Checkbox from '@material-ui/core/Checkbox'
+import TextField from '@material-ui/core/TextField'
+import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete'
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank'
+import CheckBoxIcon from '@material-ui/icons/CheckBox'
 
 interface FilmOptionType {
-  inputValue?: string;
-  title: string;
-  year?: number;
+  inputValue?: string
+  title: string
+  year?: number
 }
 
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />
+const checkedIcon = <CheckBoxIcon fontSize="small" />
 
-const filter = createFilterOptions<FilmOptionType>();
+const filter = createFilterOptions<FilmOptionType>()
 
 export default function CheckboxAutocomplete() {
-  const [value, setValue] = React.useState<FilmOptionType | null>(null);
+  const [value, setValue] = React.useState<FilmOptionType | null>(null)
 
   return (
     <Autocomplete
-      multiple
+      multiple={true}
       id="checkboxes-tags-demo"
       // @ts-ignore
       value={value}
@@ -29,49 +29,49 @@ export default function CheckboxAutocomplete() {
         if (typeof newValue === 'string') {
           setValue({
             title: newValue,
-          });
+          })
           // @ts-ignore
         } else if (newValue && newValue.inputValue) {
           // Create a new value from the user input
           setValue({
             // @ts-ignore
             title: newValue.inputValue,
-          });
+          })
         } else {
           // @ts-ignore
-          setValue(newValue);
+          setValue(newValue)
         }
       }}
       filterOptions={(options, params) => {
-        const filtered = filter(options, params);
+        const filtered = filter(options, params)
 
         // Suggest the creation of a new value
         if (params.inputValue !== '') {
           filtered.push({
             inputValue: params.inputValue,
             title: `Add "${params.inputValue}"`,
-          });
+          })
         }
 
-        return filtered;
+        return filtered
       }}
-      selectOnFocus
-      clearOnBlur
-      handleHomeEndKeys
+      selectOnFocus={true}
+      clearOnBlur={true}
+      handleHomeEndKeys={true}
       options={top100Films}
       getOptionLabel={(option) => {
         // Value selected with enter, right from the input
         if (typeof option === 'string') {
-          return option;
+          return option
         }
         // Add "xxx" option created dynamically
         if (option.inputValue) {
-          return option.inputValue;
+          return option.inputValue
         }
         // Regular option
-        return option.title;
+        return option.title
       }}
-      disableCloseOnSelect
+      disableCloseOnSelect={true}
       renderOption={(option, { selected }) => (
         <React.Fragment>
           <Checkbox
@@ -88,7 +88,7 @@ export default function CheckboxAutocomplete() {
         <TextField {...params} variant="outlined" label="Checkboxes" placeholder="Favorites" />
       )}
     />
-  );
+  )
 }
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
@@ -125,4 +125,4 @@ const top100Films: FilmOptionType[] = [
   { title: 'Once Upon a Time in the West', year: 1968 },
   { title: 'American History X', year: 1998 },
   { title: 'Interstellar', year: 2014 },
-];
+]

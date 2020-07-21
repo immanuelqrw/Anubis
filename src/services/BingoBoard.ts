@@ -1,3 +1,3 @@
-import {Goal} from "@services/Goal";
+import {Goal} from "@services/Goal"
 
-export type BingoBoard = Array<Array<Goal>>;
+export type BingoBoard = Goal[][]
