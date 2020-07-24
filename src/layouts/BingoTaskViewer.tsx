@@ -1,5 +1,6 @@
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
-// @ts-ignore
+import {Entry} from "@services/Entry"
+import {TaskViewerState} from "@utils/taskViewerState"
 import React, {Component} from "react"
 
 import {UploadFileComponent} from "@components/UploadFileComponent"
@@ -11,10 +12,7 @@ interface Props {
   location: any
 }
 
-interface State {
-}
-
-export class BingoTaskViewer extends Component<Props, State> {
+export class BingoTaskViewer extends Component<Props, TaskViewerState> {
   refs: any
 
   render() {

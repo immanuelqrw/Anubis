@@ -8,10 +8,13 @@
     ],
     "baseUrl": "src",
     "paths": {
+      "@actions/*": ["actions/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
+      "@reducers/*": ["reducers/*"],
       "@services/*": ["services/*"],
+      "@stores/*": ["stores/*"],
       "@utils/*": ["utils/*"]
     },
     "allowJs": true,
